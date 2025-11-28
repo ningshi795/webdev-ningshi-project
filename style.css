@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color:#d96bbf;
+    background-color: #f5ffc8;
+    line-height: 1.6;
+    padding: 10px;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+h1,h2,h3 {
+    color: #9b3d85;
+    line-height: 1.2;
+    margin-bottom: 0.5cm;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #d96bbf;
+    font-size: 1rem;
+}
+
+article {
+    background-color: rgb(249, 235, 235);
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-container .item{
+    background-color: #f6ebeb;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.grid-container .item:hover {
+    transform: translateY(-5px);
+    background-color: #ef97ac; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* NEW BREAKPOINT 480px */
+@media (max-width: 480px) {
+    body {
+        background-color: rgb(255, 183, 248); 
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (min-width:768px) {
+    main {
+        flex-direction: row;
+    }
+}
+
+@media (min-width:1024px) {
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+    }
+}
+
+nav{
+    transition: 0,3 ease;
+}
+
+nav.show-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark{
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark nav a {
+    color: #fff;
+}
+
+/* Header berubah warna saat hover */
+header:hover {
+    background-color: #ffb5c8;
+    transition: background-color 0.3s ease;
+}
+
+/* Ukuran font navbar (default) */
+nav ul {
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+}
