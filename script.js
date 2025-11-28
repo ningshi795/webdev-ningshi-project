@@ -51,4 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             lastScrollChange = window.scrollY;
         }
     });
+
+    console.log("kode ini sedang di eksekusi");
 });
